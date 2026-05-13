@@ -8,9 +8,9 @@ prompt() {
   while true; do
     read -rp "$1 [y/n]: " yn
     case "$yn" in
-      [Yy]) return 0 ;;
-      [Nn]) return 1 ;;
-      *) echo "  Please answer y or n." ;;
+    [Yy]) return 0 ;;
+    [Nn]) return 1 ;;
+    *) echo "  Please answer y or n." ;;
     esac
   done
 }
@@ -96,3 +96,20 @@ fi
 echo ""
 echo "==> services.sh complete."
 echo ""
+
+# ─────────────────────────────────────────────────────────────────────
+# STEP 5: Auto-connect Shokz OpenDots on login
+# ─────────────────────────────────────────────────────────────────────
+echo ""
+echo "==> STEP 5: Bluetooth auto-connect (Shokz OpenDots)"
+echo "    Enables a user systemd service that automatically reconnects"
+echo "    your Shokz OpenDots ONE on each login."
+echo ""
+
+if prompt "    Enable Shokz auto-connect service now?"; then
+  systemctl --user enable --now bt-connect-shokz.service
+  echo "    Shokz auto-connect enabled."
+else
+  echo "    Skipped. You can enable manually later with:"
+  echo "      systemctl --user enable --now bt-connect-shokz.service"
+fi
