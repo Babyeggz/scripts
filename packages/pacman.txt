@@ -28,3 +28,4 @@ xdg-desktop-portal-hyprland
 xdg-user-dirs
 xdg-utils
 inotify-tools
+libreoffice-fresh
