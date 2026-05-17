@@ -29,3 +29,12 @@ xdg-user-dirs
 xdg-utils
 inotify-tools
 libreoffice-fresh
+texlive-meta
+biber
+nodejs
+npm
+unzip
+zathura
+zathura-pdf-mupdf
+moonlight-qt
+veracrypt
